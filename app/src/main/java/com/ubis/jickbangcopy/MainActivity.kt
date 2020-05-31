@@ -3,6 +3,7 @@ package com.ubis.jickbangcopy
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.ubis.jickbangcopy.adapters.roomadapter
 import com.ubis.jickbangcopy.datas.room
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,12 +16,23 @@ class MainActivity() : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         setValues()
         setupEvents()
     }
 
     override fun setValues() {
+
+        roomListView.setOnItemLongClickListener { parent, view, position, id ->
+
+            val alert = AlertDialog.Builder(mContext)
+            alert.setTitle("테스트")
+            alert.setMessage("테스트테스트")
+
+            alert.show()
+            return@setOnItemLongClickListener true
+        }
 
     }
 
