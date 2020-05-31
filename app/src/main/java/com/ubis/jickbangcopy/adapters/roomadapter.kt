@@ -29,6 +29,7 @@ class roomadapter(context: Context, resId: Int, list:List<room>) : ArrayAdapter<
         val addressTxt = row.findViewById<TextView>(R.id.adressAndFloor)
         val descTxt = row.findViewById<TextView>(R.id.descTxt)
 
+        priceTxt.text = "${data.getPrice()}"
         addressTxt.text = "${data.address}, ${data.getFormattedFloor()}"
         descTxt.text = data.description
 

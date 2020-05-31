@@ -13,4 +13,26 @@ class room (val price:Int, val address:String, val floor:Int, val description:St
             return "지하 ${-this.floor}층"
         }
     }
+
+    fun getPrice() : String {
+
+        if(this.price > 10000)
+        {
+            val uk = this.price/10000
+            val underuk = this.price%10000
+
+
+            return "${uk}억 ${underuk}"
+        }
+        else if (this.price == 10000) {
+            return "1억"
+        }
+        else
+        {
+            return "${this.price}"
+        }
+
+
+    }
+
 }
