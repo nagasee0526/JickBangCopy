@@ -1,5 +1,8 @@
 package com.ubis.jickbangcopy.datas
 
+import java.text.NumberFormat
+import java.util.*
+
 class room (val price:Int, val address:String, val floor:Int, val description:String) {
 
     fun getFormattedFloor() : String {
@@ -22,17 +25,14 @@ class room (val price:Int, val address:String, val floor:Int, val description:St
             val underuk = this.price%10000
 
 
-            return "${uk}억 ${underuk}"
+            return "${uk}억 ${NumberFormat.getIntegerInstance(Locale.KOREA).format(underuk)}"
         }
         else if (this.price == 10000) {
             return "1억"
         }
         else
         {
-            return "${this.price}"
+            return  "${NumberFormat.getIntegerInstance(Locale.KOREA).format(this.price)}"
         }
-
-
     }
-
 }
