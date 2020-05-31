@@ -1,4 +1,14 @@
 package com.ubis.jickbangcopy.adapters
 
-class roomadapter(val price:Int, val address:String, val floor:Int, val description:String) {
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.TextView
+import com.ubis.jickbangcopy.datas.room
+
+class roomadapter(context: Context, resId: Int, list:List<room>) : ArrayAdapter<room>(context, resId, list){
+
+
 }
